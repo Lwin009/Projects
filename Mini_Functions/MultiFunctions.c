@@ -76,6 +76,17 @@ int * twoSum(int * arr, int target, size_t size){
     return ret;
 }
 
+/**
+ *  This function add two given linkedlist numbers. There are two linkedlists with non-negative 
+ *  integers and they are reverse order. Therefore it needs to return the correct value 
+ *  when it is doing the addition. For example: (1->5->4) + (2->6->7) = (3->1->2->1)
+ */
+
+int * addTwoNumber(int * l1, size_t s1, int * l2, size_t s2){
+
+    
+}
+
 
 
 /********************************* Helper Functions *************************************/
@@ -97,7 +108,6 @@ void print_array(int * arr, size_t size){
 int main(){
 
     int arr[10] = {4, 5, 6, 7, 9, 1, 62, 3, 11, 15};
-
 
 
     int entry = 0;          // users entry
