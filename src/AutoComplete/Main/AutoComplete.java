@@ -22,6 +22,7 @@ public class AutoComplete{
         dlb.insert(str5);
         dlb.insert(str6);
         dlb.insert(str7);
+        dlb.insert("words");
 
     }
 }

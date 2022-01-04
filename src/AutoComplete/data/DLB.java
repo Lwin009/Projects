@@ -78,7 +78,7 @@ public class DLB {
                 Node sibling = currNode;
 
                 while(sibling.getSibling() != null){
-                    if(sibling.getSibling().getKey() == c){
+                    if(sibling.getKey() == c){
                         sibling = sibling.getChild();
                         break;
                     }
