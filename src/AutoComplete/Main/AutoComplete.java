@@ -1,5 +1,7 @@
 package AutoComplete.Main;
 
+import java.net.Socket;
+
 import AutoComplete.data.DLB;
 
 public class AutoComplete{
@@ -23,6 +25,12 @@ public class AutoComplete{
         dlb.insert(str6);
         dlb.insert(str7);
         dlb.insert("words");
+
+        System.out.println(dlb.search("DOG"));
+        System.out.println(dlb.search("SELLS"));
+        System.out.println(dlb.search("SHEL"));
+        System.out.println(dlb.search("SHE"));
+        System.out.println(dlb.search("word"));
 
     }
 }

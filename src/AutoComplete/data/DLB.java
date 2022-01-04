@@ -98,4 +98,69 @@ public class DLB {
     }
 
 
+    /**
+     * Search the prefix in the DLB data structure.
+     * 
+     *** If the given string does not exist, it returns 0.
+     *** If the given string is a word but not a prefix to another word, 
+     *      then it return 1.
+     *** If the given string is not a word and a prefix to another word, 
+     *      then it return 2.
+     *** If the given string is a word as well as a prefix, then it 
+     *      returns 3;
+     * 
+     * @param str string to be searched
+     * @return  0 if it is not a word
+     *          1 if it is a word but not a prefix
+     *          2 if it is not a word, but is a prefix
+     *          3 if it is a word and a prefix
+     */
+    private int searchPrefix(String str){
+
+        // data trie 
+        Node currNode = this.root;
+
+        // throw exception if the root is null or trie is empty
+        if(currNode == null) throw new NullPointerException("The DLB Trie is empty.");
+
+        for(int i = 0; i < str.length(); i++){
+
+            if(currNode.getKey() == str.charAt(i)){
+                
+                currNode = currNode.getChild();
+            }else{
+
+                // get the sibling until find the correct character and sibling
+                while(currNode.getSibling() != null){
+                    
+                    if(currNode.getKey() == str.charAt(i)){
+                        break;
+                    }
+
+                    currNode = currNode.getSibling();
+                }
+
+                if(currNode.getKey() != str.charAt(i)) return 0;
+
+                else i--;
+
+
+            }
+
+        }
+        
+        if(currNode.getKey() == END && currNode.getSibling() == null){
+            return 1;
+        }else if(currNode.getChild() != null && currNode.getKey() != END){
+            return 2;
+        }else if(currNode.getValue().equals(str) && currNode.getSibling() != null){
+            return 3;
+        }
+
+        return 0;
     }
+
+    
+
+
+}
